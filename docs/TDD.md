@@ -1,0 +1,17 @@
+| 名称                                      | 是否纯脚本           | 说明介绍以及测试方法                                                                      | 适配平台            | 测试速度      | 是否支持并行           | 重要程度 |
+| --------------------------------------- | --------------- | ------------------------------------------------------------------------------- | --------------- | --------- | ---------------- | ---- |
+| 代码格式检查（Format Check）                    | 是               | 检查代码格式是否符合规范。例如 Prettier、ktlint、SwiftFormat。通过命令扫描代码。                           | Web、Android、iOS | 极快（毫秒～数秒） | 是                | 高    |
+| Schema 测试                               | 是               | 检查 JSON、XML、YAML 等数据是否符合预定义结构。例如 JSON Schema 验证。                                | Web、Android、iOS | 极快（毫秒～数秒） | 是                | 中    |
+| 依赖配置检查（Dependency Check）                | 是               | 检查依赖声明、版本冲突、锁文件一致性及依赖缺失。例如 npm ls、Gradle dependencyInsight。                     | Web、Android、iOS | 极快～快      | 是                | 高    |
+| 代码规范检查（Lint）                            | 是               | 检查不规范写法、未使用变量、潜在错误等。例如 ESLint、Detekt、SwiftLint。                                 | Web、Android、iOS | 极快～快      | 是                | 极高   |
+| 类型检查（Type Check）                        | 是               | 检查变量、函数参数、返回值等类型是否正确。例如 TypeScript tsc、Kotlin Compiler、Swift Compiler。          | Web、Android、iOS | 极快～快      | 是                | 极高   |
+| 算法测试（Algorithm Test）                    | 是               | 测试排序、搜索、加密、压缩、数据结构等算法的正确性和边界条件，通过输入和断言验证结果。                                     | Web、Android、iOS | 极快～快      | 是                | 高    |
+| 单元测试（Unit Test）                         | 是               | 测试单个函数、类或方法。通过构造测试输入、设置预期结果和断言验证正确性。例如 Vitest、Jest、JUnit、XCTest（纯逻辑模块）。         | Web、Android、iOS | 极快～快      | 是                | 极高   |
+| Mock 测试                                 | 是               | 使用 Mock 对象模拟数据库、网络请求、文件系统等外部依赖，验证业务逻辑。例如 MockK、Mockito、Sinon。                   | Web、Android、iOS | 极快～快      | 是                | 极高   |
+| 快照测试（Snapshot Test）                     | 是               | 将函数输出、组件结构或序列化结果与历史快照比较，检测非预期变化。例如 Jest Snapshot。                               | Web、Android、iOS | 极快～快      | 是                | 中    |
+| 静态代码分析（Static Analysis）                 | 是               | 不运行程序，通过分析源代码或字节码发现潜在 Bug、空指针风险、资源泄漏等。例如 SonarScanner 本地模式、Android Lint、Detekt。 | Web、Android、iOS | 快～中等      | 是                | 极高   |
+| 属性测试（Property-based Test）               | 是               | 自动生成大量不同输入，验证某项通用性质是否始终成立。例如 Fast-check、Kotest Property、SwiftCheck。             | Web、Android、iOS | 快～中等      | 是                | 高    |
+| 本地依赖漏洞扫描（Dependency Vulnerability Scan） | 是（需要本地漏洞数据库）    | 检查项目依赖是否存在已知安全漏洞。使用本地已有的漏洞数据库扫描，不进行在线查询。                                        | Web、Android、iOS | 快～中等      | 是                | 高    |
+| 模糊测试（Fuzz Testing）                      | 是               | 自动生成随机、异常、边界输入，寻找程序崩溃、异常或逻辑错误。例如 Jazzer、Jazzer.js、libFuzzer。                    | Web、Android、iOS | 中等～较慢     | 是                | 高    |
+| 代码构建检查（Build Check）                     | 是（需要本地工具链及依赖缓存） | 编译项目，检查语法、依赖、链接及资源等是否存在错误。例如 npm build、Gradle assemble、xcodebuild build。        | Web、Android、iOS | 中等～较慢     | 是                | 极高   |
+| 基准性能测试（Benchmark Test）                  | 是               | 测试函数、算法、数据处理等的运行速度和资源消耗。例如 JMH、Benchmark.js、XCTest Performance（纯逻辑模块）。          | Web、Android、iOS | 中等～较慢     | 是（不建议并发运行同一基准测试） | 中    |
